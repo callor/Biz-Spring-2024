@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- 
+	c.c.h.service.impl.UserServiceImpl 클래스를
+	userService 라는 이름의 객체로 생성하여 준비해 줘!!!
+	bean 을 생성하여 준비해 죠~~~
+	 -->
+	<bean id="userService1" 
+		class="com.callor.hello.service.impl.UserServiceImpl"/>
+
+</beans>
