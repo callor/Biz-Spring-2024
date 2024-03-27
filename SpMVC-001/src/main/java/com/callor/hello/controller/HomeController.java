@@ -1,15 +1,15 @@
 package com.callor.hello.controller;
 
-import java.lang.System.Logger;
-import java.text.DateFormat;
-import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
-import org.mybatis.logging.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.callor.hello.models.CustomVO;
+import com.callor.hello.persistance.CustomDao;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -20,21 +20,17 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 public class HomeController {
 	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
+	private final CustomDao customDao;
+	public HomeController(CustomDao customDao) {
+		this.customDao = customDao;
+	}
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		
-		log.debug("안녕하세요");
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
+		List<CustomVO> cList = customDao.selectAll();
+		for(CustomVO vo : cList) {
+			log.debug(vo.toString());
+		}
+		log.debug("HOME");
 		return "home";
 	}
-	
 }

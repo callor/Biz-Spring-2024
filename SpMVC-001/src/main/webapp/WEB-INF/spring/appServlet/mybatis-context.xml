@@ -7,5 +7,28 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 
+	<!-- dataSouce : 어떻게 DBMS에 연결할까 -->
+	<!-- BasicDataSource : 자동으로 DB 연결 Pool 을 만들어준다 -->
+	<bean id="ds" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName"  value="com.mysql.cj.jdbc.Driver"/>
+		<property name="username" value="root"/>
+		<property name="password" value="!Biz8080"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/orderDB"/>
+	</bean>
+	<!-- 
+		SqlSessionFactory : 
+		MyBatis 를 사용하여 JavaCode 와 dataSource를 연결하는 방법  
+	-->
+	
+	<!-- DataSource 와 reference 연결하기 -->
+	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="ds"/>
+		<property name="typeAliasesPackage" value="com.callor.hello.models"/>
+	</bean>
+	<!-- SqlSessionTemplate : SQL 명령을 DBMS 에 전달할때 사용하는 도구 -->
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sessionFactory"/>
+	</bean>
+	<mybatis-spring:scan base-package="com.callor.hello.persistance"/>
 
 </beans>
