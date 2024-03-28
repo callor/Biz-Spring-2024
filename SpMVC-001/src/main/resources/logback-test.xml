@@ -2,10 +2,15 @@
 <configuration>
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <Pattern>[%-5level] - %msg%n</Pattern>
+            <Pattern>[%-5level] %c{5} - %msg%n</Pattern>
         </encoder>
     </appender>
-	<logger name="com.callor.hello" level="DEBUG"/>
+    <logger name="org.mybatis" level="DEBUG" additivity="false">
+    	<appender-ref ref="STDOUT"/>
+    </logger>
+	<logger name="com.callor.hello" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT"/>
+	</logger>
     <root level="INFO">
         <appender-ref ref="STDOUT"/>
     </root>

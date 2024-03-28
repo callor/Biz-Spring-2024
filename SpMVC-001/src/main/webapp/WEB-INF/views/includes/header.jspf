@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>	
+<c:set var="rootPath" value="${pageContext.request.contextPath}" />	    
+<style>
+	.w3-green {
+		text-shadow: 1px 1px 1px black;
+		font-weight: 900;
+	}
+</style>
+<header class="w3-container w3-green w3-padding-24 w3-center">
+	<h1>ERP 2024</h1>
+</header>
+<nav class="w3-bar w3-black">
+	<a href="${rootPath}/" class="w3-bar-item w3-button w3-mobile">Home</a>
+	<a href="#" class="w3-bar-item w3-button w3-mobile">상품관리</a>
+	<a href="${rootPath}/customer" class="w3-bar-item w3-button w3-mobile">거래처관리</a>
+	<a href="${rootPath}/order" class="w3-bar-item w3-button w3-mobile">주문서</a>
+	<a href="${rootPath}/user/login" class="w3-bar-item w3-button w3-mobile">로그인</a>
+	<a href="${rootPath}/user/join" class="w3-bar-item w3-button w3-mobile">회원가입</a>
+</nav>
+
+
+
+

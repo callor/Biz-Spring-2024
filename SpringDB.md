@@ -20,7 +20,7 @@
 <dependency>
     <groupId>org.mybatis</groupId>
     <artifactId>mybatis-spring</artifactId>
-    <version>3.0.3</version>
+    <version>3.0.0</version>
 </dependency>
 <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-dbcp2 -->
 <dependency>
@@ -42,3 +42,4 @@
 </dependency>
 ```
 - `주의할점` : `spring-jdbc` 는 `spring-webmvc`와 버전을 일치시킬것
+- `주의할점` : `mybatis-spring` 버전 유의, `SpringFrameowkr 5.2.x` 버전, `Java 17` 미만 버전에서는 `3.0.0` 이하를 사용해야 한다.
