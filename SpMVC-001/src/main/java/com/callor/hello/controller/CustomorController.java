@@ -1,5 +1,6 @@
 package com.callor.hello.controller;
 
+import java.io.PipedOutputStream;
 import java.util.List;
 
 import org.springframework.stereotype.Controller;
@@ -24,6 +25,28 @@ public class CustomorController {
 		List<CustomVO> custList = customDao.selectAll();
 		model.addAttribute("CUST_LIST",custList);
 		return "custom/list";
+	}
+	
+	@RequestMapping(value="/insert",method=RequestMethod.GET)
+	public String insert() {
+		return "custom/input";
+	}
+	
+	@RequestMapping(value="/insert",method=RequestMethod.POST)
+	public  String insert(CustomVO vo,Model model) {
+		try {
+			int result = customDao.insert(vo);
+			if(result > 0 ) {
+				return "redirect:/customer";
+			} else {
+				model.addAttribute("MSG","INSERT ERROR");
+				return "custom/input";
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			model.addAttribute("MSG","INSERT SQL ERROR");
+			return "custom/input";
+		}
 	}
 	
 }

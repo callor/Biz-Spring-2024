@@ -24,14 +24,18 @@
   	<div class="w3-container w3-padding-24 w3-center">
   		<table class="w3-table-all w3-striped w3-hoverable">
   			<tr>
-  				<th>SEQ</th>
+  				<th>주문번호</th>
+  				<th>주문일자</th>
+
   				<th>고객코드</th>
   				<th>고객이름</th>
   				<th>전화번호</th>
   			</tr>
   			<c:forEach items="${CUST_LIST}" var="CUST" varStatus="VAR">
 	  			<tr>
-	  				<td>${VAR.index}, ${VAR.count}
+	  				<td>${CUST.o_num}</td>
+	  				<td>${CUST.o_date}</td>
+	  			
 	  				<td>${CUST.c_code}</td>
 	  				<td>${CUST.c_name}</td>
 	  				<td>${CUST.c_tel}</td>
@@ -39,21 +43,8 @@
   			</c:forEach>
   		</table>
   		<div class="w3-container btn_box">
-  			<a href="${rootPath}/customer/insert" class="w3-button w3-blue w3-round-large">고객추가</a>
+  			<a href="${rootPath}/order/input" class="w3-button w3-blue w3-round-large">주문서추가</a>
   		</div>
-  		<ul>
-  			<%
-  			/*
-  			for(intt VAR = 1 ; VAR <=100; VAR += 2) {
-  				print(VAR)
-  			}
-  			*/
-  			%>
-	  		<c:forEach begin="1" end="100" step="2" var="VAR">
-  				<li>${VAR}</li>	
-  			</c:forEach>
-  		</ul>
-  		
   		
   	</div>
   </body>

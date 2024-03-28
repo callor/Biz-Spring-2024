@@ -24,6 +24,7 @@
 	<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
 		<property name="typeAliasesPackage" value="com.callor.hello.models"/>
+		<property name="mapperLocations"  value="/WEB-INF/spring/mapper/*-mapper.xml" />
 	</bean>
 	<!-- SqlSessionTemplate : SQL 명령을 DBMS 에 전달할때 사용하는 도구 -->
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
