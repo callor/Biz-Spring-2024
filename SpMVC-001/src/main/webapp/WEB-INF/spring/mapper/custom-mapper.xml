@@ -9,7 +9,12 @@
  		INSERT INTO tbl_customer (c_code,c_name,c_tel)
 		VALUES(  #{c_code},#{c_name},#{c_tel}  )
  	</insert>
- 	<update id="update"></update>
- 	<delete id="delete"></delete>
+ 	 	
+ 	<update id="update">
+ 		UPDATE tbl_customer
+ 		SET c_name = #{c_name}, c_tel = #{c_tel}
+ 		WHERE c_code = #{c_code}
+ 	</update>
+ 
  
  </mapper> 

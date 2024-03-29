@@ -22,6 +22,14 @@
   		padding:0;
   	}
   </style>
+  <script>
+    // JS 파일을 Link 하여 사용할 경우
+    // JSP 에서 선언된 ${rootPath}는 사용할수 없다
+    // JS 파일을 Link 하기 전에 var 키워드를 사용하여
+    // 모든 JS 에서 사용할수 있도록 변수를 선언해 둔다
+  	const rootPath = "${rootPath}"
+  </script>
+  <script src="${rootPath}/static/js/customer.js?2024-03-29-003"></script>
   <body>
   	<%@ include file="/WEB-INF/views/includes/header.jspf" %>
   	<div class="w3-container w3-padding-24 w3-center">

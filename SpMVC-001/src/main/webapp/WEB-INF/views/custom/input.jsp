@@ -13,9 +13,9 @@
 	<h1>고객정보 등록</h1>
 	<h3>${MSG}</h3>
 	<form method="POST">
-		<div><input placeholder="고객코드" name="c_code"/></div>
-		<div><input placeholder="고객이름" name="c_name"/></div>
-		<div><input placeholder="전화번호" name="c_tel"/></div>
+		<div><input placeholder="고객코드" name="c_code" value="${CUST.c_code}"/></div>
+		<div><input placeholder="고객이름" name="c_name" value="${CUST.c_name}"/></div>
+		<div><input placeholder="전화번호" name="c_tel" value="${CUST.c_tel}"/></div>
 		<div><input type="submit" value="저장" /></div>
 	</form>
 </body>
