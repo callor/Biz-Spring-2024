@@ -23,10 +23,6 @@
   	}
   </style>
   <script>
-    // JS 파일을 Link 하여 사용할 경우
-    // JSP 에서 선언된 ${rootPath}는 사용할수 없다
-    // JS 파일을 Link 하기 전에 var 키워드를 사용하여
-    // 모든 JS 에서 사용할수 있도록 변수를 선언해 둔다
   	const rootPath = "${rootPath}"
   </script>
   <script src="${rootPath}/static/js/customer.js?2024-03-29-003"></script>
@@ -34,28 +30,31 @@
   	<%@ include file="/WEB-INF/views/includes/header.jspf" %>
   	<div class="w3-container w3-padding-24 w3-center">
   	  	<div class="w3-container btn_box">
-  			<a href="${rootPath}/customer/insert" class="w3-button w3-blue w3-round-large">고객추가</a>
+  			<a href="${rootPath}/customer/insert" class="w3-button w3-blue w3-round-large">상품추가</a>
   		</div>
+  	
   		<table class="w3-table-all w3-striped w3-hoverable">
   			<thead>
 	  			<tr>
-	  				<th>SEQ</th>
-	  				<th>고객코드</th>
-	  				<th>고객이름</th>
-	  				<th>전화번호</th>
+	  				<th>상품코드</th>
+	  				<th>상품명</th>
+	  				<th>품목</th>
+	  				<th>가격</th>
 	  			</tr>
   			</thead>
-  			<tbody class="cust_body">
-	  			<c:forEach items="${CUST_LIST}" var="CUST" varStatus="VAR">
-		  			<tr data-ccode="${CUST.c_code}">
-		  				<td>${VAR.index}, ${VAR.count}
-		  				<td>${CUST.c_code}</td>
-		  				<td>${CUST.c_name}</td>
-		  				<td>${CUST.c_tel}</td>
+  			<tbody class="product_body">
+	  			<c:forEach items="${PRODUCT_LIST}" var="PRODUCT" varStatus="VAR">
+		  			<tr data-ccode="${PRODUCT.p_code}">
+		  				<td>${PRODUCT.p_code}</td>
+		  				<td>${PRODUCT.p_name}</td>
+		  				<td>${PRODUCT.p_item}</td>
+		  				<td>${PRODUCT.p_price}</td>
 		  			<tr>
 	  			</c:forEach>
   			</tbody>
   		</table>
+
+  		
   		
   	</div>
   </body>

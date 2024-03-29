@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.hello.persistance.CustomDao">
+
+ 	<insert id="insert" parameterType="CustomVO">
+ 		INSERT INTO tbl_customer (c_code,c_name,c_tel)
+		VALUES(  #{c_code},#{c_name},#{c_tel}  )
+ 	</insert>
+ 	 	
+ 	<update id="update">
+ 		UPDATE tbl_customer
+ 		SET c_name = #{c_name}, c_tel = #{c_tel}
+ 		WHERE c_code = #{c_code}
+ 	</update>
+ 
+ 
+ </mapper> 

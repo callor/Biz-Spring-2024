@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.hello.persistance.OrderCustomDao">
+ 
+ 	<select id="selectAll" resultType="OrderCustomVO">
+		SELECT * FROM tbl_orders O
+				JOIN tbl_customer C
+						ON O.o_ccode = C.c_code
+				ORDER BY O.o_num     
+ 	</select>
+ 	<select id="findById"></select>
+ 	<insert id="insert"></insert>
+ 	<update id="update"></update>
+ 	<delete id="delete"></delete>
+ 
+ </mapper> 
