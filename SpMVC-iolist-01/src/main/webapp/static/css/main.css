@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+header.main {
+  padding: 1.3rem;
+  text-align: center;
+  color: white;
+  background-color: green;
+}
+
+nav.main {
+  background-color: black;
+  color: white;
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 5px;
+  }
+  li {
+    padding: 12px 16px;
+    &:hover {
+      cursor: pointer;
+      background-color: #ddd;
+      color: black;
+    }
+    &:nth-of-type(5) {
+      margin-left: auto;
+    }
+  }
+}
+footer {
+  background-color: #ddd;
+  text-align: center;
+  padding: 0.8rem;
+}
+
+section.container {
+  flex: 1;
+  height: calc(100%);
+  margin: 3px;
+  border: 1px solid blue;
+}
