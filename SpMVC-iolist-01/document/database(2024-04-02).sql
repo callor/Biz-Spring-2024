@@ -11,5 +11,7 @@ CREATE TABLE tbl_iolist (
 	io_total	INT			
 );
 DESC tbl_iolist;
+USE iolistDB2;
+DROP TABLE tbl_iolist;
 
 

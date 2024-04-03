@@ -12,7 +12,7 @@
     <logger name="org.mybatis" level="INFO"/>
 
     <!-- 적용하는 프로젝트의  Base Package를 설정 -->
-    <logger name="com.callor.hello" level="INFO"/>
+    <logger name="com.callor.iolist" level="DEBUG"/>
 
 
     <!-- 적용하는 프로젝트의  controller와 service  Package의 level을 debug로 설정 -->

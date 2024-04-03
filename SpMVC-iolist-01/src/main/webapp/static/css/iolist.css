@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+table.iolist {
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: separate;
+  background-color: #eee;
+}
+
+table.iolist th,
+table.iolist td {
+  text-align: left;
+  padding: 12px 16px;
+  white-space: nowrap;
+  border-bottom: 1px solid #777;
+  border-top: 1px solid white;
+}
+
+table.iolist th {
+  color: blue;
+}
+
+div.iolist.btn_box {
+  width: 80%;
+  margin: 5px auto;
+  text-align: right;
+
+  a {
+    display: inline-block;
+    padding: 12px 16px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    &:hover {
+      background-color: #777;
+      color: black;
+    }
+  }
+}
+
+form.iolist {
+  width: 80%;
+  margin: 10px auto;
+  fieldset {
+    border: 1px solid #999;
+    legend {
+      font-size: 1.3rem;
+      color: #777;
+      font-weight: 900;
+      text-align: center;
+    }
+  }
+}
+
+form.iolist {
+  div {
+    display: flex;
+    gap: 3px;
+    padding: 5px 10px;
+
+    label,
+    input,
+    select {
+      padding: 8px;
+    }
+    label {
+      flex: 1;
+      text-align: right;
+    }
+    input,
+    select {
+      flex: 3;
+      border: 1px solid #ddd;
+      outline: none;
+      border-radius: 10px;
+    }
+  }
+}
