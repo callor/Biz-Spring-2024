@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -70,10 +71,20 @@ public class IolistController {
 		return "layout";
 	}
 
-	@RequestMapping(value="/insert",method=RequestMethod.POST)
-	public String insert(IolistVO iolistVO, Model model) {
+	/*
+	 * POST /insert 와 POST /update/seq 로 요청이 들어오면
+	 * 모두 처리하는 method
+	 */
+	@RequestMapping(value={"/insert","/update/{seq}" },method=RequestMethod.POST)
+	public String insertOrUpdate(@PathVariable(name = "seq",required = false,value="") 
+					String seq, IolistVO iolistVO, Model model) {
+		
+		if( seq != null) {
+			iolistVO.setIo_seq(Long.valueOf(seq));
+		}
 		log.debug(iolistVO.toString());
-		int result = iolistDao.insert(iolistVO);
+		
+		int result = iolistDao.insertOrUpdate(iolistVO);
 		if(result > 0) 	{
 			return "redirect:/iolist/";
 		} else {
@@ -81,4 +92,27 @@ public class IolistController {
 			return "layout";
 		}
 	}
+	
+	@RequestMapping(value="/detail/{seq}",method=RequestMethod.GET)
+	public String detail(@PathVariable("seq") String seq, Model model) {
+		
+		Long io_seq = Long.valueOf(seq);
+		IolistVO vo = iolistDao.findBySeq(io_seq);
+		
+		model.addAttribute("IO",vo);
+		model.addAttribute("BODY","IOLIST_DETAIL");
+		return "layout";
+	}
+	
+	@RequestMapping(value="/update/{seq}",method=RequestMethod.GET)
+	public String update(@PathVariable("seq") String seq,Model model) {
+		
+		Long io_seq = Long.valueOf(seq);
+		IolistVO vo = iolistDao.findBySeq(io_seq);
+		model.addAttribute("IO",vo);
+		model.addAttribute("BODY","IOLIST_INPUT");
+		return "layout";
+	}
+	
+	
 }

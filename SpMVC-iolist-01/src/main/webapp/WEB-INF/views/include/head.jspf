@@ -26,7 +26,7 @@
 		}
 	</style>
 	<link rel="stylesheet" href="${rootPath}/static/css/main.css?2024-04-02-015"/>
-	<link rel="stylesheet" href="${rootPath}/static/css/iolist.css?2024-04-03-010"/>
+	<link rel="stylesheet" href="${rootPath}/static/css/iolist.css?2024-04-04-010"/>
 	<script>
 		/*
 		Spring View 에서(JSP) 에서 사용하는 EL(Expression Lang.) Tag
@@ -36,6 +36,7 @@
 		const rootPath = "${rootPath}"
 	</script>
 	<script src="${rootPath}/static/js/main.js?2024-04-03-006"></script>
+	<script src="${rootPath}/static/js/iolist.js?2024-04-04-008"></script>
 </head>
 
 

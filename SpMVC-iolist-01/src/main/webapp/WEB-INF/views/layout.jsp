@@ -12,8 +12,9 @@
     	<c:if test="${BODY == 'IOLIST_INPUT' }">
     		<%@ include file="/WEB-INF/views/iolist/input.jsp" %>
     	</c:if>
-
-
+    	<c:if test="${BODY == 'IOLIST_DETAIL' }">
+    		<%@ include file="/WEB-INF/views/iolist/detail.jsp" %>
+    	</c:if>
     </section>
     <footer class="main">
     	<address>CopyRight &copy; callor@callor.com</address>

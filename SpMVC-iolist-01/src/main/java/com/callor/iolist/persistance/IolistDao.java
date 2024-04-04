@@ -8,13 +8,15 @@ import com.callor.iolist.models.IolistVO;
 
 public interface IolistDao {
 	
-	@Select("SELECT * FROM tbl_iolist "
-			+ "ORDER BY io_date DESC, io_time DESC")
+//	@Select("SELECT * FROM tbl_iolist "
+//			+ "ORDER BY io_date DESC, io_time DESC")
 	public List<IolistVO> selectAll();
 	
-	@Select("SELECT * FROM tbl_iolist "
-			+ " WHERE io_seq = #{io_seq}")
+//	@Select("SELECT * FROM tbl_iolist "
+//			+ " WHERE io_seq = #{io_seq}")
 	public IolistVO findBySeq(Long seq);
+	
+	public int insertOrUpdate(IolistVO vo);
 	
 	public int insert(IolistVO vo);
 	public int update(IolistVO vo);
