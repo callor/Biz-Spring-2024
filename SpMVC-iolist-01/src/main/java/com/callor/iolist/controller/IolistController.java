@@ -8,6 +8,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.callor.iolist.models.IolistVO;
+import com.callor.iolist.models.UserVO;
 import com.callor.iolist.persistance.IolistDao;
+import com.callor.iolist.utils.NamesValue;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -39,7 +43,20 @@ public class IolistController {
 	
 
 	@RequestMapping(value="/insert",method=RequestMethod.GET)
-	public String insert(Model model) {
+	public String insert(Model model,HttpSession httpSession) {
+		
+		/*
+		 * HttpSession 에 저장된 session 정보는 type 이 Object 이다
+		 * 그래서 실제 상황에서는 필요한 객체 type 으로 Casting(형변환)을 해야 한다
+		 * 
+		 * float num1 = 10.0f;
+		 * int num2 = (int) num1
+		 * 
+		 */
+		UserVO userVO = (UserVO) httpSession.getAttribute(NamesValue.SESSION.USER);
+		if(userVO == null) {
+			return "redirect:/user/login?error=needs";
+		}
 		
 		// 날짜와 관련된 java 1.8 이전버전의 클래스
 		Date today = new Date();
@@ -112,6 +129,14 @@ public class IolistController {
 		model.addAttribute("IO",vo);
 		model.addAttribute("BODY","IOLIST_INPUT");
 		return "layout";
+	}
+	
+	
+	@RequestMapping(value="/delete/{seq}",method=RequestMethod.GET)
+	public String delete(@PathVariable("seq") String seq, Model model) {
+		Long io_seq = Long.valueOf(seq);
+		int ret = iolistDao.delete(io_seq);
+		return "redirect:/iolist";
 	}
 	
 	

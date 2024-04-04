@@ -11,7 +11,15 @@
 		<li>상품관리</li>
 		<li>고객관리</li>
 		<li>매입매출관리</li>
-		<li>로그인</li>
-		<li>마이페이지</li>
+		<c:if test="${empty USER}">
+			<li>로그인</li>
+			<li>회원가입</li>
+		</c:if>
+		<c:if test="${not empty USER}">
+			<li>로그아웃</li>
+			<li>${USER.name} 마이페이지</li>
+		</c:if>
 	</ul>
 </nav>
+
+
