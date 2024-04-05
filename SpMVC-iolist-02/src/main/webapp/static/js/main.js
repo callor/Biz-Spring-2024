@@ -15,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   main_nav.addEventListener("click", (e) => {
     const target = e.target;
     if (target.tagName === "LI") {
-      const text = target.innerText;
+      // textContent 는 해당 엘리먼트의 텍스트 내용을 가져온다.
+      // innerText 는 해당 엘리먼트의 텍스트 내용을 가져오거나 설정한다.
+      const text = target.textContent;
       const url = NAV[text].url;
       // alert(url);
       document.location.href = `${rootPath}${url}`;

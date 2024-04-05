@@ -36,8 +36,8 @@
 		*/
 		const rootPath = "${rootPath}"
 	</script>
-	<script src="${rootPath}/static/js/main.js?2024-04-04-001"></script>
-	<script src="${rootPath}/static/js/iolist.js?2024-04-04-009"></script>
+	<script src="${rootPath}/static/js/main.js?2024-04-05-002"></script>
+	<script src="${rootPath}/static/js/iolist.js?2024-04-05-009"></script>
 </head>
 
 
