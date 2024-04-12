@@ -8,13 +8,13 @@
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 	<context:component-scan base-package="com.callor.hello.service.auth"/>
-
 	<sec:http auto-config="true" use-expressions="true">
 		<sec:form-login
 			login-page="/user/login"
 			username-parameter="u_name"
 			password-parameter="u_password"
 			login-processing-url="/user/login"
+			default-target-url="/"
 		/>
 		<sec:logout
 			logout-success-url="/"
@@ -36,6 +36,8 @@
 				access="hasRole('ADMIN')" />
 		<sec:intercept-url pattern="/**" 
 				access="permitAll()" />
+				
+		<sec:access-denied-handler error-page="/auth/denied"/>
 	
 	</sec:http>
 	<sec:authentication-manager>

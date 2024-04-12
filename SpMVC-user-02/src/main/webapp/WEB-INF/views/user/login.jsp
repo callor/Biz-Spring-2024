@@ -34,7 +34,11 @@
 </head>
 <body>
 	<f:form class="form login" name="f">
-		<c:if test="${param.error != null}">Invalid User</c:if>
+		<c:if test="${param.error != null}">Invalid User.</c:if>
+		<c:if test="${SPRING_SECURITY_LAST_EXCEPTION != null}">
+			${SPRING_SECURITY_LAST_EXCEPTION.message}
+			<c:remove var="SPRING_SECURITY_LAST_EXCEPTION"/>
+		</c:if>
 		<div><label>UserName</label><input name="u_name"></div>
 		<div><label>Password</label><input name="u_password"></div>
 		<div><button type="submit">Log in</button></div>		
