@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.hello.dao.RoleDao">
+ 
+ 	<!--
+ 	List type 의 변수를 받아서
+ 	foreach 를 사용하여 다음과 같은 SQL 을 생성한다 
+ 	INSERT INTO tbl_rols(r_username, r_role)
+ 	VALUES('callor','ROLE_ADMIN'), ('callor','ROLE_USER')
+ 	-->
+ 	<insert id="insertAll">
+ 		INSERT INTO tbl_roles( r_username, r_role )
+ 		VALUES
+ 		<foreach collection="LIST" item="vo">
+ 			(#{vo.r_username}, #{vo.r_role} ),
+ 		</foreach>
+ 	</insert>
+ 	<update id="update"></update>
+ 	<delete id="delete"></delete>
+ 
+ </mapper> 

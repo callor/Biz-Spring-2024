@@ -1,1 +1,2 @@
 -- UserDB
+CREATE DATABASE userdb;
