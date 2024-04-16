@@ -25,7 +25,7 @@ public class AuthController {
 		);
 		
 		model.addAttribute("AUTH",auth);
-		model.addAttribute("MESSAGE",exp);
+		model.addAttribute("MESSAGE",exp); 
 		
 		return null;
 	}
