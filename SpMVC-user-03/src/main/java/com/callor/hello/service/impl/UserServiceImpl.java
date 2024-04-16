@@ -3,7 +3,9 @@ package com.callor.hello.service.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.context.annotation.Bean;
+import javax.transaction.Transactional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.callor.hello.dao.RoleDao;
@@ -29,6 +31,7 @@ public class UserServiceImpl implements UserService {
 	 * 3. 없으면 새로 추가(가입)되는 회원은 admin 이며 일반 사용자
 	 */
 	@Override
+	@Transactional
 	public UserVO createUser(UserVO createUserVO) {
 
 		String username = createUserVO.getUsername();
@@ -66,7 +69,7 @@ public class UserServiceImpl implements UserService {
 	 * 자동으로 생성되는 method 를 실행하기 위함임
 	 * 
 	 */
-	@Bean
+	@Autowired
 	public void create_table () {
 		userDao.create_user_table(null);
 		userDao.create_role_table(null);

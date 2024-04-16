@@ -11,15 +11,17 @@
     <script>
     	const rootPath = "${rootPath}"
     </script>
-    <script src="${rootPath}/static/js/user.js?2024-04-15-001"></script>
+    <script src="${rootPath}/static/js/user.js?2024-04-16-001"></script>
   </head>
   <body>
     <h1>회원가입 및 로그인 구현</h1>
     <f:form class="join">
-    	<div><input placeholder="USERNAME" name="u_name"></div>
-    	<div><input placeholder="PASSWORD" name="u_password"></div>
+    	<div><input placeholder="USERNAME" name="username"></div>
+    	<div><input placeholder="PASSWORD" name="password"></div>
     	<div><input placeholder="RE PASSWORD" name="re_password"></div>
+    	<div><input placeholder="Email" name="email"></div>
     	<div><button type="button">회원가입</button></div>
+    	<a href="${rootPath}/user/login">로그인</a>
     </f:form>
   </body>
 </html>

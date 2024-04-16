@@ -9,7 +9,7 @@
     </appender>
 
     <logger name="org.springframework" level="INFO"/>
-    <logger name="org.mybatis" level="INFO"/>
+    <logger name="org.mybatis" level="DEBUG"/>
 
     <!-- 적용하는 프로젝트의  Base Package를 설정 -->
     <!-- STDOUT 에 설정된 pattern 으로 Console 에 log 출력 -->

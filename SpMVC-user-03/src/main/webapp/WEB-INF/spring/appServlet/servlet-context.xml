@@ -3,8 +3,27 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
 	xmlns:context="http://www.springframework.org/schema/context"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+		http://www.springframework.org/schema/tx https://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	<!-- 
+	mybatis-context.xml 을 root 영역(Application 영역)에 설정하면 
+	servlet 영역에는 transaction 적용이 안된다
+	root 영역에 설정된 transaction을 servlet 영역에서도 사용할 수 있도록
+	설정하는 것
+	
+	servlet 영역에서 transation(@Transactional) 을 요청하면
+	root 영역에 선언된 bean 참조하여 기능을 수행하라
+	
+	특히 proxy-target-class 를 반드시 true 로 설정
+	기본값은 false 이다
+	-->
+	<tx:annotation-driven proxy-target-class="true"/>
 
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<mvc:annotation-driven />
@@ -20,5 +39,6 @@
 	</bean>
 	<context:component-scan base-package="com.callor.hello.controller" />
 	<context:component-scan base-package="com.callor.hello.service.impl" />
+
 </beans>
 

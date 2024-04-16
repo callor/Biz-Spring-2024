@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const join_form = document.querySelector("form.join");
-  const username = join_form.querySelector("input[name='u_name']");
-  const password = join_form.querySelector(
-    "input[name='u_password']"
-  );
+  const username = join_form.querySelector("input[name='username']");
+  const password = join_form.querySelector("input[name='password']");
   const re_password = join_form.querySelector(
     "input[name='re_password']"
   );

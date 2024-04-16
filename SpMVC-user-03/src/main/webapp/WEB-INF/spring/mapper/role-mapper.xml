@@ -14,8 +14,8 @@
  	<insert id="insertAll">
  		INSERT INTO tbl_roles( r_username, r_role )
  		VALUES
- 		<foreach collection="LIST" item="vo">
- 			(#{vo.r_username}, #{vo.r_role} ),
+ 		<foreach collection="list" item="vo" separator=", ">
+ 			(#{vo.r_username}, #{vo.r_role} )
  		</foreach>
  	</insert>
  	<update id="update"></update>

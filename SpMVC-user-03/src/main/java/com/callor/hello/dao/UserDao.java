@@ -8,6 +8,7 @@ import com.callor.hello.models.UserVO;
 
 public interface UserDao {
 	
+	@Select("SELECT * FROM tbl_users ORDER BY username")
 	public List<UserVO> selectAll();
 	
 	@Select("SELECT * FROM tbl_users WHERE username = #{username}")
