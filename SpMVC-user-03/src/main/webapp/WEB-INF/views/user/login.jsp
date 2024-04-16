@@ -12,6 +12,9 @@
   <body>
     <h1>로그인</h1>
     <f:form>
+    	<c:if test="${SPRING_SECURITY_LAST_EXCEPTION != null}">
+    		<div>${SPRING_SECURITY_LAST_EXCEPTION.message}</div>
+    	</c:if>
  		<div><input placeholder="USERNAME" name="u_name"></div>
  		<div><input placeholder="PASSWORD" name="u_password"></div>
  		<div><button>로그인</button></div>   

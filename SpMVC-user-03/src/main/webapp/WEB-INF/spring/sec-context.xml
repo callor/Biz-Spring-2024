@@ -25,12 +25,19 @@
 			password-parameter="u_password"
 			default-target-url="/"	
 		/>
-		<sec:logout logout-url="/user/logout"/>
-		
+		<sec:logout 
+			logout-url="/user/logout"
+			logout-success-url="/"
+		/>
+		<sec:access-denied-handler error-page="/auth/denided"/>
 	</sec:http>
 	
 	<sec:authentication-manager>
 		<sec:authentication-provider ref="authProviderImpl"/>
 	</sec:authentication-manager>
+	
+	<bean id="passEncoder" 
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+	</bean>
 
 </beans>

@@ -6,6 +6,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.callor.hello.dao.RoleDao;
@@ -17,12 +19,20 @@ import com.callor.hello.service.UserService;
 @Service
 public class UserServiceImpl implements UserService {
 	
+	private final PasswordEncoder passwordEncoder;
 	private final UserDao userDao;
 	private final RoleDao roleDao;
-	public UserServiceImpl(UserDao userDao,RoleDao roleDao) {
+	
+	public UserServiceImpl(
+		@Qualifier("passEncoderV1")	PasswordEncoder passwordEncoder, 
+		UserDao userDao, RoleDao roleDao) {
+		
+		super();
+		this.passwordEncoder = passwordEncoder;
 		this.userDao = userDao;
 		this.roleDao = roleDao;
 	}
+
 
 	/*
 	 * 회원가입 절차
@@ -35,8 +45,13 @@ public class UserServiceImpl implements UserService {
 	public UserVO createUser(UserVO createUserVO) {
 
 		String username = createUserVO.getUsername();
+		String password = createUserVO.getPassword();
 		
 		List<UserVO> userList = userDao.selectAll();
+		
+		// 회원 가입시 입력한 password 를 암호화 하기
+		String encPassword = passwordEncoder.encode(password);
+		createUserVO.setPassword(encPassword);
 		
 		List<RoleVO> roles = new ArrayList<>();
 		// 조건이 true 이면 아직 아무도 회원가입을 하지 않았다
