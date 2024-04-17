@@ -11,7 +11,7 @@
     <script>
     	const rootPath = "${rootPath}"
     </script>
-    <script src="${rootPath}/static/js/user.js?2024-04-16-001"></script>
+    <script src="${rootPath}/static/js/user.js?2024-04-17-006"></script>
   </head>
   <body>
     <h1>회원가입 및 로그인 구현</h1>

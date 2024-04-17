@@ -22,7 +22,7 @@
 - 필수 dependency
 ```
 mybatis
-mybatis-spring
+mybatis-spring 3.0.0
 dbcp : common-dbcp2
 mysql : mysql-connector/j
 spring-jdbc
