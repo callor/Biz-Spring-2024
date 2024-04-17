@@ -4,7 +4,7 @@
 <html>
   <tiles:insertAttribute name="head"/>
   <body>
-    <h1>Hello!! Korea</h1>
-    <h2>The time on the Today is ${serverTime}</h2>
+  	<tiles:insertAttribute name="header" />
+    <tiles:insertAttribute name="content"/>
   </body>
 </html>
