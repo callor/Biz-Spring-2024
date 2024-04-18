@@ -1,0 +1,15 @@
+@charset "UTF-8";
+section.bbs.container {
+  display: flex;
+  gap: 5px;
+  aside {
+    border: 1px solid blue;
+    padding: 10px;
+  }
+  aside:nth-of-type(1) {
+    flex: 1;
+  }
+  aside:nth-of-type(2) {
+    flex: 3;
+  }
+}
