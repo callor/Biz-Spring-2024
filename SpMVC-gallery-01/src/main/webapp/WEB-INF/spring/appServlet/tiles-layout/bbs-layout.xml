@@ -4,29 +4,18 @@
   "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 
 <tiles-definitions>
-
 	<definition name="bbs/free" extends="default">
-		<put-attribute name="content" value="/WEB-INF/views/bbs/home.jsp">
-			<definition template="/WEB-INF/views/bbs/home.jsp">
-				<put-attribute name="aside-left" 
-					value="/WEB-INF/views/bbs/bbs-aside-left.jsp" />
-				<put-attribute name="aside-right" 
-							value="/WEB-INF/views/bbs/free/list.jsp" /> 
-			</definition>
-		</put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/bbs/home.jsp"/>
+		<put-attribute name="aside-left" 
+			value="/WEB-INF/views/bbs/bbs-aside-left.jsp" cascade="true" />
+		<put-attribute name="aside-right" 
+			value="/WEB-INF/views/bbs/free/list.jsp" cascade="true"/>
 	</definition>
-	
-	<definition name="bbs/free/*" extends="default">
-		<put-attribute name="content" value="/WEB-INF/views/bbs/home.jsp">
-			<definition template="/WEB-INF/views/bbs/home.jsp">
-				<put-attribute name="aside-left" 
-					value="/WEB-INF/views/bbs/bbs-aside-left.jsp" />
-				<put-attribute name="aside-right" 
-							value="/WEB-INF/views/bbs/free/{1}.jsp" /> 
-			</definition>
-		</put-attribute>
+
+	<definition name="bbs/free/*" extends="bbs/free">
+		<put-attribute name="aside-right" 
+			value="/WEB-INF/views/bbs/free/{1}.jsp" cascade="true"/>
 	</definition>
-	
 </tiles-definitions>
 
 
