@@ -13,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class GallaeryVO {
+public class GalleryVO {
 	private String g_id;		//	VARCHAR(125)
 	private String g_date;		//	VARCHAR(10)
 	private String g_time;		//	VARCHAR(10)

@@ -5,31 +5,22 @@
 
 <tiles-definitions>
 
-	<definition name="bbs" extends="default">
+	<definition name="bbs/*" extends="default">
 		<put-attribute name="content" value="/WEB-INF/views/bbs/home.jsp"/>
 		<put-attribute name="aside-left" 
 			value="/WEB-INF/views/bbs/bbs-aside-left.jsp" cascade="true" />
-		<put-attribute name="aside-right" value="" cascade="true"/>
+		<put-attribute name="aside-right" 
+			value="/WEB-INF/views/bbs/{1}/list.jsp" cascade="true"/>
 	</definition>	
 
-	<definition name="bbs/free" extends="bbs">
+	<!-- 
+		bbs/free/write 요청 : bbs/free/write.jsp 를 Rendering
+		bbs/notice/write 요청 : bbs/notice/write.jsp 를 Rendering
+	 -->
+	<definition name="bbs/*/*" extends="bbs/free">
 		<put-attribute name="aside-right" 
-			value="/WEB-INF/views/bbs/free/list.jsp" cascade="true"/>
+			value="/WEB-INF/views/bbs/{1}/{2}.jsp" cascade="true"/>			
 	</definition>
-	<definition name="bbs/free/*" extends="bbs">
-		<put-attribute name="aside-right" 
-			value="/WEB-INF/views/bbs/free/{1}.jsp" cascade="true"/>
-	</definition>
-	
-	<definition name="bbs/notice" extends="bbs">
-		<put-attribute name="aside-right" 
-			value="/WEB-INF/views/bbs/notice/list.jsp" cascade="true"/>
-	</definition>
-	<definition name="bbs/notice/*" extends="bbs">
-		<put-attribute name="aside-right" 
-			value="/WEB-INF/views/bbs/notice/{1}.jsp" cascade="true"/>
-	</definition>
-	
 	
 </tiles-definitions>
 
