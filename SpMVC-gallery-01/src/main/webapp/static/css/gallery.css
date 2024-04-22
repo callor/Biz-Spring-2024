@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+section.gallery {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid blue;
+}
+
+article.gallery {
+  width: 80%;
+  margin: 10px auto;
+  border: 1px solid green;
+}
