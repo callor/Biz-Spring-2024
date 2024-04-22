@@ -1,0 +1,2 @@
+-- gallery
+CREATE DATABASE galleryDB;

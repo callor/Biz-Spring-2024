@@ -13,7 +13,7 @@
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="username" value="root"/>
 		<property name="password" value="!Biz8080"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/bbsDB"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/galleryDB"/>
 	</bean>
 	<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
