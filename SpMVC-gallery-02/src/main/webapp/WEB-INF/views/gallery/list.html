@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <section layout:fragment="content">
+    <h1>이미지 리스트</h1>
+
+    <div class="gallery card" th:each="GA, item:${GALLERYS}">
+      <img th:src="${GA.g_image}" width="100px" />
+    </div>
+  </section>
+</html>
