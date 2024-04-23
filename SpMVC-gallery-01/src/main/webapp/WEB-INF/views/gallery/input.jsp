@@ -10,9 +10,6 @@
 		<f:form>
 			<fieldset>
 				<legend>이미지 업로드</legend>
-				<div><input placeholder="작성일자" name="g_date"/></div>
-				<div><input placeholder="작성시각" name="g_time"/></div>
-				<div><input placeholder="작성자" name="g_author"/></div>
 				<div><input placeholder="제목"  name="g_subject"/></div>
 				<div><textarea rows="5" placeholder="이미지 설명" name="g_content"></textarea></div>
 				<div class="image"><img class="gallery" 

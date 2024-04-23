@@ -1,0 +1,10 @@
+@charset "UTF-8";
+article.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+div.gallery.card {
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
+}
