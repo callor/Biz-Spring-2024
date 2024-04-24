@@ -18,15 +18,41 @@
         padding: 0;
       }
     </style>
+    <link
+      rel="stylesheet"
+      href="../../static/css/main.css"
+      th:href="@{/static/css/main.css}"
+    />
+    <script th:inline="javascript">
+      // thymeleaf 에 사용하는 변수(EL, @{/} ) 를
+      // 문자열로 변환하여 rootPath 변수에 할당하기
+      const rootPath = /*[[@{/}]]*/
+    </script>
+    <script
+      src="../../static/js/main_nav.js"
+      th:src="@{/static/js/main_nav.js}"
+      th:inline="javascript"
+    ></script>
   </head>
   <body>
-    <h1>나의 홈페이지</h1>
-    <h2 th:text="${NAME}">나는 홍길동 입니다</h2>
-
-    <a href="/" th:href="@{/}">홈</a>
-    <a href="/gallery/insert" th:href="@{/gallery/insert}"
-      >이미지 업로드</a
-    >
+    <header class="main">
+      <h1>이미지 갤러리 2024 v2</h1>
+      <div>
+        <a href="./user/login.html" th:href="@{/user/login}"
+          >로그인</a
+        >
+        <a href="./user/join.html" th:href="@{/user/join}"
+          >회원가입</a
+        >
+      </div>
+    </header>
+    <nav class="main">
+      <ul>
+        <li class="home">Home</li>
+        <li class="notice">공지사항</li>
+        <li class="free">자유게시판</li>
+      </ul>
+    </nav>
     <section class="main" layout:fragment="content"></section>
   </body>
 </html>

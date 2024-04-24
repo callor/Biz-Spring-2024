@@ -6,10 +6,29 @@
   layout:decorate="~{/home}"
 >
   <section layout:fragment="content">
-    <h1>이미지 리스트</h1>
-
-    <div class="gallery card" th:each="GA, item:${GALLERYS}">
-      <img th:src="${GA.g_image}" width="100px" />
-    </div>
+    <link
+      rel="stylesheet"
+      href="../../../static/css/gallery.css"
+      th:href="@{/static/css/gallery.css}"
+    />
+    <section class="gallery">
+      <a href="../gallery/input.html" th:href="@{/gallery/insert}"
+        >이미지 업로드</a
+      >
+    </section>
+    <section class="gallery container">
+      <div class="gallery card" th:each="GA:${GALLERYS}">
+        <div>
+          <img
+            th:src="${GA.g_image}"
+            src="../../../static/images/no_image.png"
+            width="100px"
+          />
+        </div>
+        <h3 th:text="${GA.g_subject}" class="galley subject">
+          이미지 제목
+        </h3>
+      </div>
+    </section>
   </section>
 </html>

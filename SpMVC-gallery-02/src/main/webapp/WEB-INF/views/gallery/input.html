@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <section layout:fragment="content">
+    <link
+      rel="stylesheet"
+      href="../../../static/css/gallery_input.css"
+      th:href="@{/static/css/gallery_input.css}"
+    />
+    <script
+      src="../../../static/js/gallery_input.js"
+      th:src="@{/static/js/gallery_input.js}"
+    ></script>
+    <section class="gallery">
+      <article class="gallery">
+        <form action="">
+          <fieldset>
+            <legend>이미지 업로드</legend>
+            <div>
+              <input
+                type="text"
+                placeholder="제목"
+                name="g_subject"
+              />
+            </div>
+            <div>
+              <textarea
+                placeholder="이미지 설명"
+                name="g_content"
+              ></textarea>
+            </div>
+            <div><input type="file" class="file" /></div>
+            <div><input type="hidden" name="g_image" /></div>
+            <div class="image">
+              <img
+                src="../../../static/images/no_image.png"
+                th:src="@{/static/images/no_image.png}"
+                width="300px"
+                class="gallery"
+              />
+            </div>
+            <div><input type="submit" value="저장" /></div>
+          </fieldset>
+        </form>
+      </article>
+    </section>
+  </section>
+</html>

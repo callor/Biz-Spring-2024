@@ -1,0 +1,100 @@
+@charset "UTF-8";
+html {
+  height: 100vh;
+}
+body {
+  height: 100%;
+  color: #333;
+  background-color: #f3f3f3;
+}
+
+header.main {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.3rem;
+
+  img {
+    margin-left: 20px;
+    padding: 5px 10px 0px 10px;
+    transition: 0.7s;
+    &:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+  h1 {
+    flex: 3;
+    text-align: center;
+  }
+}
+
+header.main div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.5rem 1rem 0 1rem;
+    border-bottom: 1px solid transparent;
+    transition: 0.7s;
+    &:hover {
+      border-bottom: 1px solid yellow;
+    }
+  }
+}
+
+nav.main {
+  background-color: #333;
+  color: #fff;
+  padding: 0.5rem;
+  ul {
+    list-style-type: none;
+    display: flex;
+    white-space: nowrap;
+  }
+}
+
+nav.main li {
+  margin: 5px;
+  /* top, rignt, bottom, left=right */
+  padding: 0.5rem 2rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.7s;
+  transition: box-shadow 3s;
+}
+
+/*
+box-shodow : inset width 0 0 색깔;
+box 내부에서 왼쪽에서 오른쪽으로 그림자를 형성하기
+transition 이 적용되면 왼쪽에서 오른쪽으로 슬라이딩 박스가 형성
+
+box-shodow 의 width 는 반드시 px 로 만 지정해야 한다
+width 를 px 로 지정하려면 box 의 실제 width를 알아야 한다
+box 크기를 몰라도 좀 큰 값으로 보통은 화면 전체 width(1100px) 으로 설정한다
+하지만 그림자는 실제 박스를 벗어나면 그려지지 않는다
+
+transition 시간을 좀 길게 줘야 효과가 나타난다
+*/
+
+nav.main li:hover {
+  background-color: #555;
+  cursor: pointer;
+  border-bottom: 2px solid yellow;
+  box-shadow: inset 500px 0 0 #000;
+}
+
+nav.main li.active {
+  background-color: #555;
+  border-bottom: 2px solid green;
+}
+
+section.main {
+  padding: 12px 16px;
+}
