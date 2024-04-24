@@ -11,6 +11,9 @@
 - dependency 설정
 - `thymeleaf-springX` : 사용하는 `Spring Framework` 버전에 따라 적정한 도구를 설정
 - `thymeleaf-layout-xxx` : thymeleaf 에서 Layout 설정을 쉽게 구현할수 있도록 도와주는 `3rd LIB` 이다.
+
+- `layout` 도구는 `nz.net.ultraq.*`에서 배포하는 도구를 주로 많이 사용한다.
+
 ```xml
 <dependency>
 	<groupId>org.thymeleaf</groupId>

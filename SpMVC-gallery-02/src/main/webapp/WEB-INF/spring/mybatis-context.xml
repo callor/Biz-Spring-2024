@@ -13,12 +13,13 @@
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="username" value="root"/>
 		<property name="password" value="!Biz8080"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/galleryDB"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/galleryDB2"/>
 	</bean>
 	<bean id="factoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds"/>
 		<property name="typeAliasesPackage" value="com.callor.gallery.models"/>
-		<property name="mapperLocations" value="/WEB-INF/spring/mapper/*-mapper.xml"/>
+		<property name="mapperLocations" 
+				value="/WEB-INF/spring/mapper/*-mapper.xml"/>
 	</bean>
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg ref="factoryBean"/>

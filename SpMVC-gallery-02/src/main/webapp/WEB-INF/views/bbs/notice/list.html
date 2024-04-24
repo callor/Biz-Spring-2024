@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/bbs/home}"
+>
+  <section class="bbs container">
+    <aside class="bbs-left-side" layout:fragment="bbs-left-side">
+      <a href="">중요공지 보기</a>
+      <a href="">전체공지 보기</a>
+    </aside>
+    <aside class="bbs-right-side" layout:fragment="bbs-right-side">
+      공지사항 리스트
+    </aside>
+  </section>
+</html>

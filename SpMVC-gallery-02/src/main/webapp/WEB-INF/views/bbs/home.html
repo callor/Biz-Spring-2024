@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <section layout:fragment="content">
+    <link
+      rel="stylesheet"
+      href="../../../static/css/bbs.css"
+      th:href="@{/static/css/bbs.css}"
+    />
+    <section class="bbs-layout">
+      <aside class="bbs-left-side" layout:fragment="bbs-left-side">
+        여기는 LEFT
+      </aside>
+      <aside class="bbs-right-side" layout:fragment="bbs-right-side">
+        여기는 Right
+      </aside>
+    </section>
+  </section>
+</html>
