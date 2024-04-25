@@ -11,6 +11,11 @@
 
 	<!-- Handles HTTP GET requests for /static/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/static/**" location="/static/" />
+	<!-- 
+	view 화면에서 참조할 /upload/ 라는 path 를
+	실제 로컬 스토리지 /app/upload/ 라는 폴더와 연결하라
+	-->
+	<mvc:resources mapping="/upload/**" location="file:///app/upload/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<bean

@@ -10,7 +10,17 @@
  	</select>
  	<select id="findById"></select>
  	
- 	<insert id="insert"></insert>
+ 	<insert id="insert">
+		 	INSERT INTO tbl_gallerys (
+				g_id,g_date,g_time,
+				g_author,g_subject,	g_content,
+				g_origin_image,	g_up_image
+		 	) VALUES (
+			 	#{g_id},#{g_date},#{g_time},
+				#{g_author},#{g_subject},#{g_content},
+				#{g_origin_image},#{g_up_image}
+		 	)
+ 	</insert>
  	<update id="update"></update>
  	<delete id="delete"></delete>
  	
@@ -20,9 +30,9 @@
 			g_id	VARCHAR(125)	PRIMARY KEY,
 			g_date	VARCHAR(10)	NOT NULL,
 			g_time	VARCHAR(10)	NOT NULL,
-			g_author	VARCHAR(20)	NOT NULL,
-			g_subject	VARCHAR(20)	NOT NULL,
-			g_content	VARCHAR(100)	NOT NULL,
+			g_author	VARCHAR(50)	NOT NULL,
+			g_subject	VARCHAR(50)	NOT NULL,
+			g_content	VARCHAR(255)	NOT NULL,
 			g_origin_image	VARCHAR(255)	NOT NULL,
 			g_up_image	VARCHAR(255)	NOT NULL
 		)

@@ -12,3 +12,5 @@ CREATE TABLE tbl_gallerys (
 	g_origin_image	VARCHAR(255)	NOT NULL,
 	g_up_image	VARCHAR(255)	NOT NULL
 )
+
+
