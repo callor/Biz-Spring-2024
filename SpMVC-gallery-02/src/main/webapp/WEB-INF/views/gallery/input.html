@@ -36,11 +36,19 @@
             <div>
               <input
                 type="file"
-                class="file"
+                class="file single"
                 name="image_file"
                 accept="image/*"
               />
+              <input
+                type="file"
+                class="file multi"
+                name="image_files"
+                accept="image/*"
+                multiple
+              />
             </div>
+
             <div><input type="hidden" name="g_image" /></div>
             <div class="image">
               <img
@@ -50,12 +58,10 @@
                 class="gallery"
               />
             </div>
+            <div class="image multi"></div>
             <div><input type="submit" value="저장" /></div>
           </fieldset>
         </form>
-        <img
-          th:src="@{/upload/{image}(image=${GALLERY.g_up_image})}"
-        />
       </article>
     </section>
   </section>

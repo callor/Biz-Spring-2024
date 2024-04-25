@@ -1,6 +1,7 @@
 package com.callor.gallery.service.impl;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -83,9 +84,16 @@ public class FileUploadServiceImpl implements FileUploadService{
 	}
 
 	@Override
-	public List<String> filsUpload(MultipartHttpServletRequest files) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public List<String> filesUpload(MultipartHttpServletRequest files) throws Exception {
+
+		// 업로드된 멀티파일을 List type 의 MultipartFile 로 분해하기
+		List<MultipartFile> result = files.getFiles("image_files");
+		List<String> resultFileNames = new ArrayList<String>();
+		for(MultipartFile f : result) {
+			String resName = this.fileUpload(f);
+			resultFileNames.add(resName);
+		}
+		return resultFileNames;
 	}
 	
 	
