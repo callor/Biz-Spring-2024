@@ -2,7 +2,7 @@ package com.callor.gallery.dao;
 
 import java.util.List;
 
-public interface GenericCao<VO, PK> {
+public interface GenericDao<VO, PK> {
 
 	public List<VO> selectAll();
 	public VO findById(PK pk);

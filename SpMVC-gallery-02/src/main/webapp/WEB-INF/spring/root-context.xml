@@ -16,6 +16,9 @@
 			<property name="maxUploadSize" value="20971520"/>
 			<property name="maxUploadSizePerFile" value="2097152"/>
 	</bean>
+	
+	<context:component-scan base-package="com.callor.gallery.service.auth"/>
+	<context:component-scan base-package="com.callor.gallery.service.impl"/>
 
 </beans>
        
