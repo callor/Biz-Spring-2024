@@ -13,5 +13,6 @@ CREATE TABLE tbl_roles (
 
 DROP TABLE tbl_roles;
 DROP TABLE tbl_users;
+SHOW TABLES;
 
 
