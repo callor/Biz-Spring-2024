@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.gallery.dao.UserDao">
+ 
+ 	<select id="selectAll">
+ 		SELECT * FROM tbl_users ORDER BY username 
+ 	</select>
+ 	<select id="findById">
+ 		SELECT * FROM tbl_users WHERE username = #{username}
+ 	</select>
+ 	
+ 	<insert id="inserts"></insert>
+ 	<update id="update"></update>
+ 	<delete id="delete"></delete>
+ 	
+ 	<select id="create_table">
+ 		CREATE TABLE IF NOT EXISTS tbl_users (
+ 			username	VARCHAR(125)	PRIMARY KEY,
+			password	VARCHAR(125)	NOT NULL,
+			email	VARCHAR(125)	NOT NULL,
+			tel	VARCHAR(125)	NOT NULL
+		)
+ 	</select>
+ </mapper> 

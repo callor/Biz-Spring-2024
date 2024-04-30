@@ -7,8 +7,6 @@ import org.apache.ibatis.annotations.Param;
 import com.callor.gallery.models.ImageVO;
 
 public interface ImageDao extends GenericDao<ImageVO, String>{
-
-	public void create_table(String string);
 	
 	/*
 	 * Dao의 method 에서 mapper 로 전달하는 매개변수가 1개만 있을 경우는

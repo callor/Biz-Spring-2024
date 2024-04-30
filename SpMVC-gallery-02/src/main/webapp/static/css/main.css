@@ -97,4 +97,6 @@ nav.main li.active {
 
 section.main {
   padding: 12px 16px;
+  width: 100%;
+  border: 1px solid blue;
 }

@@ -7,8 +7,9 @@
 >
   <section class="bbs container">
     <aside class="bbs-left-side" layout:fragment="bbs-left-side">
-      <a href="">전체보기</a>
-      <a href="">인기글 보기</a>
+      <a href="@{/bbs/free">전체보기</a>
+      <a href="@{/bbs/free/like">인기글 보기</a>
+      <a th:href="@{/bbs/free/insert}">글쓰기</a>
     </aside>
     <aside class="bbs-right-side" layout:fragment="bbs-right-side">
       자유게시판 리스트

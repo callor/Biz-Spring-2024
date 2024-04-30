@@ -5,7 +5,21 @@
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{/home}"
 >
-  <sectio layout:fragment="content">
-    <h1>회원가입</h1>
-  </sectio>
+  <section layout:fragment="content">
+    <link
+      rel="stylesheet"
+      href="../../../static/css/user.css"
+      th:href="@{/static/css/user.css}"
+    />
+    <form method="POST" class="user join">
+      <fieldset>
+        <legend>회원가입</legend>
+        <div><input type="text" placeholder="USERNAME" /></div>
+        <div><input type="text" placeholder="PASSWORD" /></div>
+        <div><input type="text" placeholder="Email" /></div>
+        <div><input type="text" placeholder="TEL" /></div>
+        <div><input type="submit" value="회원가입" /></div>
+      </fieldset>
+    </form>
+  </section>
 </html>

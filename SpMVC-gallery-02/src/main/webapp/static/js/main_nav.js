@@ -10,8 +10,8 @@ JSON type 의 객체
 */
 const NAV_INDEX = {
   home: { url: "/" },
-  notice: { url: "/bbs/notice" },
-  free: { url: "/bbs/free" },
+  notice: { url: "bbs/notice" },
+  free: { url: "bbs/free" },
 };
 document.addEventListener("DOMContentLoaded", () => {
   const mainNav = document.querySelector("nav.main");

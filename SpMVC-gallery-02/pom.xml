@@ -12,13 +12,25 @@
 		<artifactId>parents</artifactId>
 		<version>2024.04</version>
 	</parent>
+	<properties>
+		<org.thymeleaf-version>3.1.2.RELEASE</org.thymeleaf-version>
+	</properties>
+	
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.thymeleaf/thymeleaf-spring5 -->
 		<dependency>
 			<groupId>org.thymeleaf</groupId>
 			<artifactId>thymeleaf-spring5</artifactId>
-			<version>3.1.2.RELEASE</version>
+			<version>${org.thymeleaf-version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity5 -->
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity5</artifactId>
+			<version>${org.thymeleaf-version}</version>
+		</dependency>
+
+
 		<!-- https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect -->
 		<dependency>
 			<groupId>nz.net.ultraq.thymeleaf</groupId>

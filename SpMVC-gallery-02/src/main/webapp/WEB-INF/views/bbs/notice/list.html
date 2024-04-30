@@ -2,13 +2,15 @@
 <html
   lang="ko"
   xmlns:th="http://www.thymeleaf.org"
+  xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{/bbs/home}"
 >
   <section class="bbs container">
     <aside class="bbs-left-side" layout:fragment="bbs-left-side">
-      <a href="">중요공지 보기</a>
-      <a href="">전체공지 보기</a>
+      <a th:href="@{/bbs/notice/top}">중요공지 보기</a>
+      <a th:href="@{/bbs/notice}">전체공지 보기</a>
+	  <a sec:authorize="hasRole('ROLE_ADMIN')" th:href="@{/bbs/notice/insert}">공지사항 작성</a>
     </aside>
     <aside class="bbs-right-side" layout:fragment="bbs-right-side">
       공지사항 리스트
