@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.callor.gallery.models.ImageVO;
+import com.callor.gallery.models.ImagesVO;
 
-public interface ImageDao extends GenericDao<ImageVO, String>{
+public interface ImageDao extends GenericDao<ImagesVO, String>{
 	
 	/*
 	 * Dao의 method 에서 mapper 로 전달하는 매개변수가 1개만 있을 경우는
@@ -20,6 +20,6 @@ public interface ImageDao extends GenericDao<ImageVO, String>{
 	 */
 	public int inserts(
 		@Param("g_id") String i_gid, 
-		@Param("images") List<ImageVO> resultNames);
+		@Param("images") List<ImagesVO> resultNames);
 
 }

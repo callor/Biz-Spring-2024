@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.callor.gallery.dao.GalleryDao;
 import com.callor.gallery.dao.ImageDao;
 import com.callor.gallery.models.GalleryVO;
-import com.callor.gallery.models.ImageVO;
+import com.callor.gallery.models.ImagesVO;
 import com.callor.gallery.service.FileUploadService;
 import com.callor.gallery.service.GalleryService;
 
@@ -92,7 +92,7 @@ public class GalleryServiceImpl implements GalleryService{
 		
 		log.debug("G ID {}",i_gid);
 		
-		List<ImageVO> resultNames = fileUploadService.filesUpload(image_files);
+		List<ImagesVO> resultNames = fileUploadService.filesUpload(image_files);
 	
 		int iRet = imageDao.inserts(i_gid, resultNames);
 		return null;

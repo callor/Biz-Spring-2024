@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.callor.gallery.models.ImageVO;
+import com.callor.gallery.models.ImagesVO;
 
 public interface FileUploadService {
 
@@ -21,7 +21,7 @@ public interface FileUploadService {
 	public String fileUpload(MultipartFile file) throws Exception;
 	
 	// 여려개의 파일을 업로드 실행하고 변형된 파일 이름 리스트를 return
-	public List<ImageVO> filesUpload(MultipartHttpServletRequest files) throws Exception;
+	public List<ImagesVO> filesUpload(MultipartHttpServletRequest files) throws Exception;
 	
 	
 	

@@ -31,9 +31,8 @@
 		/>
 		<sec:logout 
 			invalidate-session="true" 
-			delete-cookies="true"
 			logout-success-url="/"
-			logout-url="/user/login"
+			logout-url="/user/logout"
 		/>
 	</sec:http>
 	
