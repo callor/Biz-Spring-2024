@@ -5,7 +5,19 @@
   xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
   layout:decorate="~{/home}"
 >
-  <sectio layout:fragment="content">
-    <h1>로그인</h1>
-  </sectio>
+  <section layout:fragment="content">
+    <form th:action method="POST">
+      <div
+        th:if="${SPRING_SECURITY_LAST_EXCEPTION != null}"
+        th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}"
+      ></div>
+      <div>
+        <input type="text" placeholder="USERNAME" name="username" />
+      </div>
+      <div>
+        <input type="text" placeholder="PASSWORD" name="password" />
+      </div>
+      <div><input type="submit" value="로그인" /></div>
+    </form>
+  </section>
 </html>

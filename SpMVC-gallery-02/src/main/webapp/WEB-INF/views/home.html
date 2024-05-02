@@ -55,7 +55,10 @@
           href=""
           th:href="@{/user/mypage}"
           sec:authorize="isAuthenticated()"
-          >마이페이지(<span sec:authentication="principal"></span>)</a
+          >마이페이지(<span
+            sec:authentication="principal.username"
+          ></span
+          >)</a
         >
         <a
           href=""

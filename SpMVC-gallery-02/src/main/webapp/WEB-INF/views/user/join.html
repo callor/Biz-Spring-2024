@@ -14,10 +14,11 @@
     <form method="POST" class="user join" th:action>
       <fieldset>
         <legend>회원가입</legend>
-        <div><input type="text" placeholder="USERNAME" /></div>
-        <div><input type="text" placeholder="PASSWORD" /></div>
-        <div><input type="text" placeholder="Email" /></div>
-        <div><input type="text" placeholder="TEL" /></div>
+        <div><input type="text" placeholder="USERNAME" name="username"/></div>
+        <div><input type="text" placeholder="PASSWORD" name="password"/></div>
+        <div><input type="text" placeholder="PASSWORD 확인" /></div>
+        <div><input type="text" placeholder="Email" name="email"/></div>
+        <div><input type="text" placeholder="TEL" name="tel"/></div>
         <div><input type="submit" value="회원가입" /></div>
       </fieldset>
     </form>
