@@ -44,17 +44,16 @@ public class AuthProviderImpl implements AuthenticationProvider{
 		log.debug("USERNAME {}, PASSWORD {}",username, password);
 		
 		if(username == null || username.isBlank()) {
-			throw new UsernameNotFoundException("사용자이름 확인");
+			throw new UsernameNotFoundException("사용자이름을 입력하세요");
 		}
 		
 		UserVO userVO = userDao.findById(username);
-		
 		if( userVO == null || !userVO.getUsername().equals(username) ) {
 			throw new UsernameNotFoundException("없는 사용자이름 입니다");
 		}
 		
 		if(password == null || password.isBlank()) { 
-			throw new BadCredentialsException("비밀번호 확인");
+			throw new BadCredentialsException("비밀번호를 입력하세요");
 		}
 		if(!passwordEncoder.matches(password, userVO.getPassword())) {
 			throw new BadCredentialsException("비밀번호가 일치하지 않음");

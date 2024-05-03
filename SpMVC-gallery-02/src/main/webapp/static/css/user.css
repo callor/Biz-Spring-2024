@@ -25,3 +25,14 @@ form.user {
     }
   }
 }
+
+div.error {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 5px;
+  color: #721c24;
+  text-align: center;
+}

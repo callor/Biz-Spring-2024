@@ -6,10 +6,16 @@
   layout:decorate="~{/home}"
 >
   <section layout:fragment="content">
-    <form th:action method="POST">
+    <link
+      rel="stylesheet"
+      href="../../../static/css/user.css"
+      th:href="@{/static/css/user.css}"
+    />
+    <form th:action="@{/user/login}" method="POST" class="user login">
       <div
-        th:if="${SPRING_SECURITY_LAST_EXCEPTION != null}"
-        th:text="${SPRING_SECURITY_LAST_EXCEPTION.message}"
+        class="error"
+        th:if="${session['SPRING_SECURITY_LAST_EXCEPTION'] != null}"
+        th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}"
       ></div>
       <div>
         <input type="text" placeholder="USERNAME" name="username" />

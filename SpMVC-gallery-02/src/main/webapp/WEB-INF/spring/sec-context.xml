@@ -17,7 +17,7 @@
 					
 		<sec:intercept-url pattern="/bbs/**" access="permitAll()"/>
 		
-		<sec:intercept-url pattern="/user/login" access="permitAll()"/>
+		<sec:intercept-url pattern="/user/login" access="isAnonymous()"/>
 		<sec:intercept-url pattern="/user/join" access="isAnonymous()"/>
 		<sec:intercept-url pattern="/user/mypage" access="isAuthenticated()"/>
 		
@@ -27,7 +27,7 @@
 			login-processing-url="/user/login"
 			username-parameter="username"
 			password-parameter="password"
-			
+			authentication-failure-url="/user/login/fail"
 		/>
 		<sec:logout 
 			invalidate-session="true" 
