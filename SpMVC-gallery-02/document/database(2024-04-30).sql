@@ -16,10 +16,12 @@ CREATE TABLE IF NOT EXISTS tbl_roles (
 	CONSTRAINT FK_USER
 	FOREIGN KEY (r_username)
 	REFERENCES tbl_users(username) ON DELETE CASCADE
-)
-
+);
+DESC tbl_roles;
 DROP TABLE tbl_roles;
 DROP TABLE tbl_users;
 SHOW TABLES;
-
+SELECT * FROM tbl_users;
+SELECT * FROM tbl_roles;
+DESC tbl_users;
 
