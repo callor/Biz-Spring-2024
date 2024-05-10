@@ -10,6 +10,9 @@ public class BBsNoticeController {
 	
 	@RequestMapping(value= {"/",""},method=RequestMethod.GET)
 	public String home() {
+		
+		
+		
 		return "bbs/notice/list";
 	}
 
