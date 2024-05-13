@@ -8,9 +8,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>여기는 제목</title>
+<link rel="stylesheet" href="${rootPath}/static/css/main.css">
 </head>
 <body>
-	<h1>반갑습니다</h1>
-
+	<section class="main">
+		<article class="image list">
+		</article>
+		<div class="image button">
+			<a href="${rootPath}/insert" class="insert">갤러리 작성</a>
+		</div>
+	</section>
 </body>
 </html>

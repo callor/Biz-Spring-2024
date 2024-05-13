@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.gallery.dao.GalleryDao">
+ 
+ 	<select id="selectAll">
+ 		SELECT * FROM tbl_mygallery ORDER BY g_date DESC, g_time DESC
+ 	</select>
+ 	<select id="findById">
+ 		SELECT * FROM tbl_mygallery WHERE g_id = #{g_id}
+ 	</select>
+ 	<insert id="insert">
+		INSERT INTO tbl_mygallery (
+				g_id, g_date, g_time,
+				g_subject,	g_content,
+				g_writer, g_password,
+				g_image
+		) VALUES (
+				#{g_id}, #{g_date}, #{g_time},
+				#{g_subject}, #{g_content},
+				#{g_writer}, #{g_password},
+				#{g_image}
+		) 		
+ 	</insert>
+ 	<update id="update"></update>
+ 	<delete id="delete"></delete>
+ 	
+ 	<select id="create_table">
+			CREATE TABLE IF NOT EXISTS tbl_mygallery (
+				g_id VARCHAR(125) PRIMARY KEY,
+				g_date VARCHAR(10),
+				g_time VARCHAR(10),
+				g_subject VARCHAR(125),
+				g_content VARCHAR(400),
+				g_writer VARCHAR(125),
+				g_password VARCHAR(125),
+				g_image VARCHAR(255)
+			);
+ 	</select>
+ 
+ </mapper> 
