@@ -26,8 +26,14 @@ public class ServletContextConfig implements WebMvcConfigurer{
 		registry.addResourceHandler("/static/**")
 				.addResourceLocations("/static/");
 
+		registry.addResourceHandler("/css/**")
+				.addResourceLocations("/static/css/");
+		registry.addResourceHandler("/js/**")
+				.addResourceLocations("/static/js/");
+		
 		registry.addResourceHandler("/images/**")
-				.addResourceLocations("file:///app/upload/");
+				.addResourceLocations("file:///app/upload/","/static/images/");
+		
 		WebMvcConfigurer.super.addResourceHandlers(registry);
 	}
 	

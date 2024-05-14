@@ -10,4 +10,6 @@ public interface GenericDao<VO, PK> {
 	public int update(VO vo);
 	public int delete(PK pk);
 	
+	public void create_table();
+	
 }
