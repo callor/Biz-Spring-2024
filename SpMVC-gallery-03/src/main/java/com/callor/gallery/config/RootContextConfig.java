@@ -16,9 +16,7 @@ public class RootContextConfig {
 	
 	@Bean(name = "multipartResolver")
 	public CommonsMultipartResolver getFileResolver() throws IOException {
-		
 		CommonsMultipartResolver resolver = new CommonsMultipartResolver();
-		
 		// 한개의 파일 용량 제한하기
 		resolver.setMaxUploadSizePerFile( 1024 * 1024 * 2);
 		resolver.setMaxUploadSize(1024 * 1024 * 20);
@@ -29,5 +27,9 @@ public class RootContextConfig {
 		return resolver;
 	}
 	
+	@Bean(name = "upLoadPath")
+	public String upLoadPath() {
+		return "c:/app/upload";
+	}
 
 }
