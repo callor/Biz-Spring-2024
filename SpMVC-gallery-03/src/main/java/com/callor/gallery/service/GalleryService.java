@@ -8,5 +8,6 @@ public interface GalleryService {
 
 	public List<GalleryVO> selectAll();
 	public int createGallery();
+	public int createGallerys();
 
 }

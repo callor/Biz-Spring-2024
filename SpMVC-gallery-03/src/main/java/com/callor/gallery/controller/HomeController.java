@@ -62,6 +62,8 @@ public class HomeController {
 		List<MultipartFile> fileList = files.getFiles("files");
 		log.debug("Image {}", fileList.get(0).getOriginalFilename());
 		
+		galleryService.createGallerys(gallyVO, files);
+		
 		return "redirect:/";
 	}
 	

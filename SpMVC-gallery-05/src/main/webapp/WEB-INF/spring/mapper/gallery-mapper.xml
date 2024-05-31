@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.gallery.dao.GalleryDao">
+ 
+
+ 	<insert id="insert">
+ 		INSERT INTO tbl_gallerys (
+	 		g_id,
+			g_date,
+			g_time,
+			g_subject,
+			g_content,
+			g_password,
+			g_image
+ 		) VALUES (
+	 		#{g_id},
+			#{g_date},
+			#{g_time},
+			#{g_subject},
+			#{g_content},
+			#{g_password},
+			#{g_image}
+ 		)
+ 	
+ 	</insert>
+ 	<update id="update"></update>
+ 	
+ 	<select id="create_table">
+ 		CREATE TABLE IF NOT EXISTS tbl_gallerys (
+ 			g_id VARCHAR(125) PRIMARY KEY,
+ 			g_date VARCHAR(10),
+ 			g_time VARCHAR(10),
+ 			g_subject VARCHAR(125),
+ 			g_content VARCHAR(400),
+ 			g_password VARCHAR(125),
+ 			g_image VARCHAR(255)			
+ 		)
+ 	</select>
+ 
+ </mapper> 
